@@ -146,16 +146,17 @@ class GameOfLife(object):
 
         return grid
 
+def print_grid(game):
+    grid = game.grid
+    for r in range(game.rows):
+        for c in range(game.cols):
+            print(grid[r][c], end='')
+        print()
 
 if __name__ == '__main__':
     game = GameOfLife(40, 40, [(12, 10), (11, 11), (12, 12), (11, 10), (13, 10)])
 
     while game.num_live_cells() > 0:
-        grid = game.grid
-
-        for r in range(game.rows):
-            for c in range(game.cols):
-                print(grid[r][c], end='')
-            print()
+        print_grid(game)
         sleep(0.3)
         game.tick()
