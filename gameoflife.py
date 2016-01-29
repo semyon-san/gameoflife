@@ -125,9 +125,8 @@ class GameOfLife(object):
         return n
 
     def _progress(self):
-        tmp_grid = self._current_grid
         self._current_grid = self._future_grid 
-        self._future_grid = tmp_grid
+        self._future_grid = self._make_grid(self._grid_rows, self._grid_cols, [])
 
         self._current_live_cells = self._future_live_cells
         self._future_live_cells = []
@@ -154,7 +153,7 @@ def print_grid(game):
         print()
 
 if __name__ == '__main__':
-    game = GameOfLife(40, 40, [(12, 10), (11, 11), (12, 12), (11, 10), (13, 10)])
+    game = GameOfLife(30, 40, [(2,3),(2,4),(2,5),(2,6),(2,7),(3,7),(4,6),(5,5),(6,4),(7,3)])
 
     while game.num_live_cells() > 0:
         print_grid(game)
