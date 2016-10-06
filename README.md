@@ -4,6 +4,8 @@ Python library for generating Conway's Game of Life.
 Example usage
 -----------------------------------------------
 ```py
+from gameoflife import GameOfLife
+from time import sleep
 
 def print_grid(game):
     grid = game.grid
