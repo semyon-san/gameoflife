@@ -49,17 +49,17 @@ class Cell(object):
         return self._col
 
 class GameOfLife(object):
-    def __init__(self, grid_rows, grid_cols, live_cells_coords):
-        self._grid_rows = grid_rows
-        self._grid_cols = grid_cols
+    def __init__(self, rows, cols, live_cells_coords):
+        self._grid_rows = rows
+        self._grid_cols = cols
 
         self._current_live_cells = []
         self._future_live_cells = []
 
         self._processed_cells = []
 
-        self._current_grid = self._make_grid(grid_rows, grid_cols, live_cells_coords)
-        self._future_grid = self._make_grid(grid_rows, grid_cols, [])
+        self._current_grid = self._make_grid(rows, cols, live_cells_coords)
+        self._future_grid = self._make_grid(rows, cols, [])
 
     def num_live_cells(self):
         return len(self._current_live_cells)
@@ -153,7 +153,7 @@ def print_grid(game):
         print()
 
 if __name__ == '__main__':
-    game = GameOfLife(30, 40, [(2,3),(2,4),(2,5),(2,6),(2,7),(3,7),(4,6),(5,5),(6,4),(7,3)])
+    game = GameOfLife(rows=30, cols=40, live_cells_coords=[(2,3),(2,4),(2,5),(2,6),(2,7),(3,7),(4,6),(5,5),(6,4),(7,3)])
 
     while game.num_live_cells() > 0:
         print_grid(game)

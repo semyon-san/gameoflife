@@ -14,7 +14,7 @@ def print_grid(game):
             print(grid[r][c], end='')
         print()
 
-game = GameOfLife(40, 40, [(12, 10), (11, 11), (12, 12), (11, 10), (13, 10)])
+game = GameOfLife(rows=30, cols=40, live_cells_coords=[(2,3),(2,4),(2,5),(2,6),(2,7),(3,7),(4,6),(5,5),(6,4),(7,3)])
 
 while game.num_live_cells() > 0:
     print_grid(game)
