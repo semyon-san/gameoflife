@@ -34,7 +34,7 @@ class Cell(object):
         return self._live
 
     def is_dead(self):
-        return self._live == False
+        return not self._live
 
     def is_processed(self):
         return self._processed
@@ -94,6 +94,10 @@ class GameOfLife(object):
     @property
     def grid(self):
         return self._grid
+
+    @property
+    def live_cells(self):
+        return self._live_cells
 
     @property
     def rows(self):
